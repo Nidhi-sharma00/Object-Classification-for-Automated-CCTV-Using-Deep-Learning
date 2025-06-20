@@ -1,21 +1,22 @@
-# **Object Classification for Automated CCTV**
+# Object Classification for Automated CCTV
 
 This project aims to automate CCTV recording using object classification. By leveraging deep learning models, the system only records footage when relevant objects such as humans, vehicles, or animals are detected. This reduces unnecessary storage usage and enhances surveillance efficiency.
 
-Features
+---
 
-CNN-based classification on Fashion-MNIST dataset for benchmarking
+## Features
 
-Custom object detection using YOLOv5
+* CNN-based classification using Fashion-MNIST for benchmarking
+* Object detection using YOLOv5 on custom CCTV-like dataset
+* Real-time detection via webcam
+* Automatic frame capture when relevant objects are detected
+* YOLO-format dataset annotation and processing
 
-Real-time detection via webcam
+---
 
-Automatic frame capture on detecting selected objects
+## Project Structure
 
-YOLO-format dataset preparation
-
-Project Structure
-
+```
 ├── yolov5/                      # YOLOv5 source code
 ├── dataset_cctv/                # Custom dataset in YOLO format
 │   ├── images/
@@ -26,66 +27,85 @@ Project Structure
 │   │   └── val/
 │   └── data.yaml
 ├── train.py                     # Training script for YOLOv5
-├── webcam_inference.py          # Real-time webcam detection script
-├── report.ipynb                 # Jupyter notebook with full workflow
+├── webcam_inference.py          # Webcam-based real-time detection
+├── report.ipynb                 # Complete project report notebook
 ├── README.md
+```
 
-Setup Instructions
+---
 
-Clone this repository and navigate to the project directory.
+## Setup Instructions
 
-Install requirements:
+1. Clone the repository:
 
-pip install -r yolov5/requirements.txt
+   ```bash
+   git clone https://github.com/your-username/cctv-object-classification.git
+   cd cctv-object-classification
+   ```
+2. Install dependencies:
 
-Train YOLOv5 model:
+   ```bash
+   pip install -r yolov5/requirements.txt
+   ```
+3. Train the model:
 
-python train.py --img 640 --batch 16 --epochs 30 --data dataset_cctv/data.yaml --weights yolov5s.pt --name cctv_model
+   ```bash
+   python train.py --img 640 --batch 16 --epochs 30 --data dataset_cctv/data.yaml --weights yolov5s.pt --name cctv_model
+   ```
+4. Run real-time detection using webcam:
 
-Run real-time detection with webcam:
+   ```bash
+   python webcam_inference.py
+   ```
 
-python webcam_inference.py
+---
 
-Dataset
+## Dataset
 
-Benchmark: Fashion-MNIST
+* **Benchmark**: [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
+* **Custom YOLO Dataset**:
 
-Custom CCTV-like dataset created in YOLO format with three classes:
+  * Classes:
 
-0: human
+    * `0`: human
+    * `1`: vehicle
+    * `2`: animal
+  * Format: YOLO annotation with `.txt` files corresponding to each image
 
-1: vehicle
+---
 
-2: animal
+## Results
 
-Results
+* CNN on Fashion-MNIST: \~91% accuracy
+* YOLOv5 trained on custom dataset for object classification
+* Real-time detection worked accurately with webcam input
+* Frames saved only when selected object classes were detected
 
-Fashion-MNIST model accuracy: ~91%
+---
 
-YOLOv5 detection confidence: configurable
+## Future Improvements
 
-Real-time frame saving when target classes appear
+* Add audio alerts for detections
+* Support for RTSP/IP camera streams
+* Deployment on edge devices (Jetson Nano, Raspberry Pi)
+* Logging detections with timestamps
 
-Future Improvements
+---
 
-Add audio alerts
+## Developed By
 
-Integrate with CCTV streams or RTSP
+**Nidhi Sharma**
+Role: Student, Guru Jambheshwar University of Science and Technology
 
-Optimize for Jetson Nano or Raspberry Pi
+---
 
-Developed By
+## References
 
-Nidhi Sharma
-Student, Guru Jambheshwar University of Science and Technology
+* [YOLOv5 GitHub](https://github.com/ultralytics/yolov5)
+* [PyTorch Hub](https://pytorch.org/hub)
+* [OpenCV](https://opencv.org)
+* [Fashion-MNIST Dataset](https://github.com/zalandoresearch/fashion-mnist)
 
-References
-
-YOLOv5 GitHub
-
-PyTorch Hub
-
-OpenCV
 
 Fashion-MNIST Dataset
 
