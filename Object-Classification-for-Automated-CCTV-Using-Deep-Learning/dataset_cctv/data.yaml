@@ -1,0 +1,6 @@
+train: /Users/vaibhavsingh/Desktop/Coding/Deep-Learning Projects/dataset_cctv/images/train
+val: /Users/vaibhavsingh/Desktop/Coding/Deep-Learning Projects/dataset_cctv/images/val
+
+nc: 3
+names: ['human', 'vehicle', 'animal']
+
