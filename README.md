@@ -88,6 +88,7 @@ This project aims to automate CCTV recording using object classification. By lev
 ## Developed By
 
 **Nidhi Sharma**
+
 Role: Student
 
 ---
