@@ -17,8 +17,8 @@ This project aims to automate CCTV recording using object classification. By lev
 ## Project Structure
 
 ```
-├── yolov5/                      # YOLOv5 source code
-├── dataset_cctv/                # Custom dataset in YOLO format
+├── yolov5/                                      # YOLOv5 source code
+├── dataset_cctv/                                # Custom dataset in YOLO format
 │   ├── images/
 │   │   ├── train/
 │   │   └── val/
@@ -26,9 +26,7 @@ This project aims to automate CCTV recording using object classification. By lev
 │   │   ├── train/
 │   │   └── val/
 │   └── data.yaml
-├── train.py                     # Training script for YOLOv5
-├── webcam_inference.py          # Webcam-based real-time detection
-├── report.ipynb                 # Complete project report notebook
+├── Object_Classification_for_Automated_CCTV.ipynb   # Complete project in one notebook
 ├── README.md
 ```
 
@@ -47,15 +45,10 @@ This project aims to automate CCTV recording using object classification. By lev
    ```bash
    pip install -r yolov5/requirements.txt
    ```
-3. Train the model:
+3. Open the notebook and run all cells:
 
    ```bash
-   python train.py --img 640 --batch 16 --epochs 30 --data dataset_cctv/data.yaml --weights yolov5s.pt --name cctv_model
-   ```
-4. Run real-time detection using webcam:
-
-   ```bash
-   python webcam_inference.py
+   jupyter notebook Object_Classification_for_Automated_CCTV.ipynb
    ```
 
 ---
@@ -95,7 +88,7 @@ This project aims to automate CCTV recording using object classification. By lev
 ## Developed By
 
 **Nidhi Sharma**
-Role: Student, Guru Jambheshwar University of Science and Technology
+Role: Student
 
 ---
 
@@ -105,7 +98,3 @@ Role: Student, Guru Jambheshwar University of Science and Technology
 * [PyTorch Hub](https://pytorch.org/hub)
 * [OpenCV](https://opencv.org)
 * [Fashion-MNIST Dataset](https://github.com/zalandoresearch/fashion-mnist)
-
-
-Fashion-MNIST Dataset
-
